@@ -11,7 +11,7 @@ reward: a number tells the reward for evaluation
 config: here describes the bais parameter setting for XCS
 iterations: number of the maximum iterations
 testRate: number of iterations that will cause the testing process
-.MaxPop: population size setting
+MaxPop: population size setting
 
 Note the target agent is expected to be the product of the offered XCS.
 Regarding compaction run the CompactAgent.py, e.g., 
@@ -22,10 +22,15 @@ config=standard_XCS_config()
 env=Environment(1,3,1000,'r')
 rep=RepresentationSymbolistTernary(env.env,config)
 CA=Compact_Agent_R(ope,env.env,rep,address,ImplementList)
+The compacted results are a set of rules that are represented with the format of condition-->class
+for example: # # # # 1 1 1 1 1 1 # 1 --> 1
+
 
 address is where you put the target problem's dataset
 ImplementList is the list inform which compaction algorithms will be invoked, i.e. [0:CRA, 1:CRA2, 2:FU1, 3:FU3 4:K1, 5:PDRC 6:QRC 7:RCR 8:RCR2 9:RCR3]
 env is your target problem, i.e. env(problem Id (int), attribute number (int), reward value (int), environment type (b or r) )
+
+
 
 regarding visualization run the visualization.py, e.g.
 env=Environment(2,3,1000,'r')
