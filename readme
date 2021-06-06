@@ -1,0 +1,46 @@
+The attached provides an XCS, a set of rule compaction algorithms and three visualization techniques. 
+
+Regarding Training: run the XCS.py  e.g. xcs1=XCS(), xcs.run().
+Parameters setting are in the XCS.py's __init__ function
+environment_type: the type of the environment, can be 'r' or 'b', 'r' represents the real value domain, 'b' for the boolean domain
+ProblemId : the target problem's ID 
+when environment_type='b', 0= "Multiplexer", 1= "Carry", and 2= "Majority-On"
+when environment_type='r', 0="Mushroom", 1="MushroomFull", 2="ZOO", and 3= "German"
+AttributeSize: the length of the condition for boolean domain. Regarding the real-value domain, this parameter is redundant.
+reward: a number tells the reward for evaluation
+config: here describes the bais parameter setting for XCS
+iterations: number of the maximum iterations
+testRate: number of iterations that will cause the testing process
+.MaxPop: population size setting
+
+Note the target agent is expected to be the product of the offered XCS.
+Regarding compaction run the CompactAgent.py, e.g., 
+address="Compact\\Murshroom"
+ImplementList=[1,3,5]
+ope=XCS_Operators()
+config=standard_XCS_config()
+env=Environment(1,3,1000,'r')
+rep=RepresentationSymbolistTernary(env.env,config)
+CA=Compact_Agent_R(ope,env.env,rep,address,ImplementList)
+
+address is where you put the target problem's dataset
+ImplementList is the list inform which compaction algorithms will be invoked, i.e. [0:CRA, 1:CRA2, 2:FU1, 3:FU3 4:K1, 5:PDRC 6:QRC 7:RCR 8:RCR2 9:RCR3]
+env is your target problem, i.e. env(problem Id (int), attribute number (int), reward value (int), environment type (b or r) )
+
+regarding visualization run the visualization.py, e.g.
+env=Environment(2,3,1000,'r')
+Address="RCompacted\\23_46_30_16ZOORCR3.txt"
+operator=Compacted_Model()
+R_AFIM=AFIM(Address,operator)
+R_AFVM=AFVM(Address,operator)
+R_FIM=FIM(Address,operator)
+address is the location of where you store the target agent, note the agent is excepted to be the products of the provided compaction algorithms. 
+
+regarding extend the environment,
+regarding boolean domains, extend the BooleanEnvironment.py.
+In the __init__ function, extend the problemName with your new problem.
+extend the RandomSample.
+
+regarding real domains, extend the RealEnvironment.py.
+In the __init__function, extend the problemName
+extend the Read function
