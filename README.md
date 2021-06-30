@@ -2,7 +2,7 @@
 
 The attached code provides an XCS, a set of rule compaction algorithms and three visualization techniques. The code is based on Python 3.7. Visual Studio 2017 is the recommended platform. To run the provided code, you need to add numpy (https://numpy.org/install/) and matplotlib (https://pypi.org/project/matplotlib/) libraries to your python environment. 
 
-The version XCSv2 is recommended. In this version, you can produce the TELO paper's visualization results of AFVM by invoking the code in visualization.py:
+The version XCSV2 is recommended. In this version, you can produce the TELO paper's visualization results of AFVM by invoking the code in visualization.py:
 
 # title="6-bits Multiplexer"
 
