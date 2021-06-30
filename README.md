@@ -40,4 +40,4 @@ To produce the FIM, change the code to:
 
 # V.Drew_Simple3D_Boolean(title,R_FIM.FIM_Data,360)
 
-
+You can allow the system to visualize other problems by utilizing the given system to learn other problems. For example, utilizing the given XCS.py to train multiple models for the same problem, and then compacting these models with the given CompactAgent.py (Details please check the instruction). Change the address to the location of your compacted results.
